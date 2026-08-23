@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ексклюзивні дубові столи в наявності та під замовлення</title>
+<meta name="description" content="Ексклюзивні дубові столи з натурального дерева, епоксидною смолою та металевими ніжками. Розміри від 100х60 до 300х90. Унікальний дизайн, висока якість.">
+<style>
+:root{
+  --bg:#0c0a08;
+  --bg2:#14110d;
+  --card:#1a1610;
+  --line:rgba(212,175,110,.18);
+  --gold:#d4af6e;
+  --gold-bright:#e8c98a;
+  --text:#efe9df;
+  --muted:#9a8f7e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+
+/* header */
+header{
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:50;
+  padding:28px 5vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:1.05rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--text);
+  font-weight:600;
+}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:32px}
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.85rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:color .3s;
+}
+nav a:hover{color:var(--gold-bright)}
+@media(max-width:720px){nav{display:none}}
+
+/* hero */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 6vw 100px;
+  position:relative;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -5%,rgba(212,175,110,.13),transparent 65%),
+    linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(212,175,110,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(212,175,110,.04) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 60% 50% at 50% 40%,black,transparent 75%);
+  pointer-events:none;
+}
+.kicker{
+  font-size:.8rem;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:26px;
+  position:relative;
+}
+.hero h1{
+  font-size:clamp(2.1rem,5.4vw,4rem);
+  font-weight:700;
+  line-height:1.14;
+  max-width:900px;
+  letter-spacing:-.01em;
+  position:relative;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(120deg,var(--gold-bright),var(--gold));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p{
+  margin-top:26px;
+  max-width:640px;
+  font-size:clamp(1rem,1.6vw,1.15rem);
+  color:var(--muted);
+  position:relative;
+}
+.btn-row{margin-top:44px;position:relative}
+.btn{
+  display:inline-block;
+  padding:17px 46px;
+  border-radius:2px;
+  text-decoration:none;
+  font-size:.92rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:all .35s ease;
+}
+.btn-primary{
+  background:linear-gradient(120deg,#e8c98a,#c69b52);
+  color:#181206;
+  box-shadow:0 12px 40px rgba(212,175,110,.25);
+}
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 50px rgba(212,175,110,.38);
+}
+.scroll-hint{
+  position:absolute;
+  bottom:34px;
+  left:50%;
+  transform:translateX(-50%);
+  width:26px;height:42px;
+  border:1.5px solid var(--line);
+  border-radius:14px;
+  display:flex;
+  justify-content:center;
+}
+.scroll-hint::before{
+  content:"";
+  width:3px;height:8px;
+  background:var(--gold);
+  border-radius:3px;
+  margin-top:7px;
+  animation:drip 2s infinite ease-in-out;
+}
+@keyframes drip{
+  0%,100%{transform:translateY(0);opacity:1}
+  60%{transform:translateY(12px);opacity:.2}
+}
+
+/* sections */
+section{padding:110px 6vw}
+.section-head{
+  text-align:center;
+  margin-bottom:70px;
+}
+.section-head .kicker{margin-bottom:16px;display:block}
+.section-head h2{
+  font-size:clamp(1.7rem,3.4vw,2.5rem);
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+.divider{
+  width:56px;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:24px auto 0;
+}
+
+/* about / facts */
+.about-grid{
+  max-width:1080px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+.fact-card{
+  background:linear-gradient(160deg,var(--card),#121009);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:42px 34px;
+  transition:transform .35s,border-color .35s;
+}
+.fact-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(212,175,110,.45);
+}
+.fact-card .num{
+  font-size:.78rem;
+  color:var(--gold);
+  letter-spacing:.3em;
+  margin-bottom:20px;
+}
+.fact-card h3{
+  font-size:1.18rem;
+  margin-bottom:12px;
+  font-weight:650;
+}
+.fact-card p{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+/* gallery */
+.gallery-wrap{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gallery{
+  max-width:1180px;
+  margin:0 auto;
+  columns:2;
+  column-gap:22px;
+}
+@media(max-width:640px){.gallery{columns:1}}
+.g-item{
+  break-inside:avoid;
+  margin-bottom:22px;
+  border-radius:4px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  position:relative;
+  cursor:zoom-in;
+}
+.g-item img{
+  width:100%;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s;
+  filter:saturate(.92) contrast(1.03);
+}
+.g-item:hover img{transform:scale(1.05);filter:saturate(1.08) brightness(1.06)}
+
+/* lightbox */
+.lightbox{
+  position:fixed;inset:0;
+  background:rgba(8,6,4,.94);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .35s;
+  padding:4vh 4vw;
+}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{
+  max-width:100%;
+  max-height:92vh;
+  border-radius:4px;
+  box-shadow:0 30px 90px rgba(0,0,0,.6);
+}
+.lb-close{
+  position:absolute;
+  top:26px;right:34px;
+  font-size:2rem;
+  color:var(--gold);
+  cursor:pointer;
+  background:none;
+  border:none;
+  line-height:1;
+}
+
+/* cta */
+.cta{
+  text-align:center;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 110%,rgba(212,175,110,.12),transparent),
+    var(--bg);
+}
+.cta h2{
+  font-size:clamp(1.8rem,3.6vw,2.7rem);
+  max-width:760px;
+  margin:0 auto 18px;
+  font-weight:700;
+}
+.cta p{color:var(--muted);max-width:560px;margin:0 auto 44px;font-size:1.02rem}
+.cta .btn{padding:19px 54px}
+
+footer{
+  padding:36px 6vw;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+  color:var(--muted);
+  font-size:.82rem;
+  letter-spacing:.06em;
+}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Дубові <span>Столи</span></div>
+  <nav>
+    <a href="#about">Про столи</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#order">Замовити</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="kicker">Натуральне дерево · Ручна робота</div>
+  <h1>Ексклюзивні дубові столи <em>в наявності та під замовлення</em></h1>
+  <p>Столи з натурального дерева з епоксидною смолою в тріщинах та сучках, на металевих ніжках. Унікальний дизайн, висока якість.</p>
+  <div class="btn-row">
+    <a href="#order" class="btn btn-primary">Замовити стіл</a>
+  </div>
+  <div class="scroll-hint"></div>
+</section>
+
+<section id="about">
+  <div class="section-head reveal">
+    <span class="kicker">Що ми робимо</span>
+    <h2>Кожен стіл єдиний у своєму роді</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="about-grid">
+    <div class="fact-card reveal">
+      <div class="num">01</div>
+      <h3>Натуральне дерево</h3>
+      <p>Масив натурального дуба. Живі текстури дерева, які неможливо підробити.</p>
+    </div>
+    <div class="fact-card reveal">
+      <div class="num">02</div>
+      <h3>Епоксидна смола</h3>
+      <p>Тріщини та сучки заповнені епоксидною смолою. Стіл отримує характер і глибину.</p>
+    </div>
+    <div class="fact-card reveal">
+      <div class="num">03</div>
+      <h3>Металеві ніжки</h3>
+      <p>Надійна металева основа поєднується з деревом і завершує сучасний вигляд.</p>
+    </div>
+    <div class="fact-card reveal">
+      <div class="num">04</div>
+      <h3>Будь-який розмір</h3>
+      <p>Виготовляємо розміри від 100х60 до 300х90. В наявності та під замовлення.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-wrap">
+  <div class="section-head reveal">
+    <span class="kicker">Галерея</span>
+    <h2>Дуб і смола крупним планом</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="gallery">
+    <div class="g-item reveal"><img src="img1.jpg" alt="Дубовий стіл з епоксидною смолою"></div>
+    <div class="g-item reveal"><img src="img2.jpg" alt="Столярне виробництво, обробка дерева"></div>
+    <div class="g-item reveal"><img src="img3.jpg" alt="Дерев'яна стільниця з живим краєм"></div>
+    <div class="g-item reveal"><img src="img4.jpg" alt="Інтер'єр із дубовим столом"></div>
+    <div class="g-item reveal"><img src="img5.jpg" alt="Деталь масиву дуба"></div>
+  </div>
+</section>
+
+<section id="order" class="cta">
+  <div class="reveal">
+    <h2>Оберіть свій стіл або замовте індивідуальний</h2>
+    <p>Готові столи вже в наявності. Індивідуальні замовлення виконуємо за вашими розмірами.</p>
+    <a class="btn btn-primary" href="https://www.olx.ua/uk/list/user/2zgB0/" target="_blank" rel="noopener">Переглянути на OLX</a>
+  </div>
+</section>
+
+<footer>
+  <div>Ексклюзивні дубові столи · Натуральне дерево · Епоксидна смола</div>
+  <div><a href="https://www.olx.ua/d/uk/obyavlenie/eksklyuzivn-dubov-stoli-v-nayavnost-ta-pd-zamovlennya-ID115wMB.html" target="_blank" rel="noopener">Оголошення на OLX</a></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" aria-label="Закрити">&times;</button>
+  <img src="" alt="">
+</div>
+
+<script>
+const lb=document.getElementById('lightbox');
+const lbImg=lb.querySelector('img');
+document.querySelectorAll('.g-item img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lbImg.src=img.src;
+    lb.classList.add('open');
+  });
+});
+lb.querySelector('.lb-close').addEventListener('click',()=>lb.classList.remove('open'));
+lb.addEventListener('click',e=>{if(e.target!==lbImg)lb.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open');});
+
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.classList.add('in');
+      io.unobserve(en.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
